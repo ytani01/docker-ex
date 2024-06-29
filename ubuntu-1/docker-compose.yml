@@ -7,11 +7,11 @@ services:
       context: .
       dockerfile: Dockerfile
     image: my-ubuntu
+
     container_name: my-ubuntu-1
+    restart: unless-stopped
 
     hostname: myubuntu1
-
-    restart: unless-stopped
 
     stdin_open: true
     tty: true
