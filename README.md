@@ -1,7 +1,18 @@
 # docker examples
 
+## Install docker (and docker compose)
+```
+curl -fsSL https://get.docker.com/ | sh
+docker version
+docker compose version
+
+sudo usermod -aG docker ユーザー名
+# loginし直す
+```
+
 ## ubuntu-1
 
+### Dockerfile
 ```
 docker build -t my-ubuntu:1 .
 docker images
@@ -30,4 +41,12 @@ docker stop my-ubuntu-1
 docker ps -a
 ```
 
-##
+### docker compose
+```
+docker compose up -d
+
+docker compose down
+
+# all clean
+docker compose down --rmi all --volumes
+```
