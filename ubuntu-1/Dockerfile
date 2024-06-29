@@ -2,6 +2,7 @@ FROM ubuntu:latest
 
 RUN apt update
 RUN apt upgrade -y
+RUN apt install -y net-tools sudo
 
 # set timezone
 ENV TZ=Asia/Tokyo

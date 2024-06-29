@@ -5,20 +5,23 @@ services:
   ubuntu:
     build:
       context: .
+      dockerfile: Dockerfile
     image: my-ubuntu
     container_name: my-ubuntu-1
+
+    hostname: myubuntu1
+
     restart: unless-stopped
+
     stdin_open: true
     tty: true
-#    privileged: true
-    hostname: myubuntu1
+
 #    command: /sbin/init
 #    command: /usr/bin/zsh
     command: /usr/bin/bash
-    networks:
-      - mynet
+
+    volumes:
+      - ./_vol:/vol
+
     ports:
       - "10022:22"
-
-networks:
-  mynet:
