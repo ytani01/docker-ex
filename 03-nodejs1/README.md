@@ -19,9 +19,17 @@ docker compose down --rmi all --volumes
 ```
 ssh ssh://ubuntu@localhost:10022/
 :
-ln -s /vol/nodeapp1
+cd ~
+ln -s /work .
 
-cd nodeapp1
+cd ~/work/nodeapp1
 
 npm run start-mon
+```
+
+```
+curl -X GET http://localhost:13000/
+curl -X POST http://localhost:13000/
+curl -X PUT http://localhost:13000/123
+curl -X DELETE http://localhost:13000/ytani
 ```

@@ -23,6 +23,7 @@ services:
 
     volumes:
       - ./_vol:/vol
+      - ./work:/work
 
     ports:
       - "10022:22"
