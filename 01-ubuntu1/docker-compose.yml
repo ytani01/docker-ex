@@ -6,12 +6,12 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: my-ubuntu
+    image: ubuntu1
 
-    container_name: my-ubuntu-1
+    container_name: ubuntu1
     restart: unless-stopped
 
-    hostname: myubuntu1
+    hostname: ubuntu1
 
     stdin_open: true
     tty: true

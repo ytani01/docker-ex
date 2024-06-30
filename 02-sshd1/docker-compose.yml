@@ -1,0 +1,28 @@
+# version: '3.7'  # obsolete
+
+services:
+
+  sshd:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: sshd1
+
+    container_name: sshd1
+    restart: unless-stopped
+
+    hostname: sshd1
+
+    stdin_open: true
+    tty: true
+
+#    command: /sbin/init
+#    command: /usr/bin/zsh
+#    command: /usr/bin/bash
+    command: /usr/sbin/sshd -D
+
+    volumes:
+      - ./_vol:/vol
+
+    ports:
+      - "10022:22"
