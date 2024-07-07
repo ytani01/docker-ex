@@ -1,5 +1,6 @@
 # workdir
 _vol/
+_app/
 
 # Emacs
 *~

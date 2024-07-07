@@ -2,29 +2,31 @@
 
 services:
 
-  nodejs:
+  nodejs1_svc:
     build:
       context: .
       dockerfile: Dockerfile
-    image: nodejs1
+    image: nodejs1_img
 
-    container_name: nodejs1
+    container_name: nodejs1_cont
     restart: unless-stopped
 
-    hostname: nodejs1
+    hostname: nodejs1host
 
-    stdin_open: true
-    tty: true
+#    stdin_open: true
+#    tty: true
+
+#    user: "ubuntu:ubuntu"
 
 #    command: /sbin/init
 #    command: /usr/bin/zsh
 #    command: /usr/bin/bash
-    command: /usr/sbin/sshd -D
+    command: sudo /usr/sbin/sshd -D
 
     volumes:
-      - ./_vol:/vol
-      - ./work:/work
+      - ./_app:/app
 
+#    network_mode: host
     ports:
       - "10022:22"
       - "13000:3000"
