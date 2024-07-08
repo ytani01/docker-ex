@@ -41,6 +41,7 @@ RUN apt autoremove -y
 #RUN n latest
 RUN n lts
 RUN npm update -g npm
+RUN npm install -g pnpm
 
 ## tools
 #RUN apt install -y git
