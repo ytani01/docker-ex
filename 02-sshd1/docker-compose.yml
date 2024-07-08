@@ -16,11 +16,6 @@ services:
 #    stdin_open: true
 #    tty: true
 
-#    command: /sbin/init
-#    command: /usr/bin/zsh
-#    command: /usr/bin/bash
-    command: /usr/sbin/sshd -D
-
     volumes:
       - ./_vol:/vol
 
@@ -28,6 +23,11 @@ services:
       - sshd1_net
     ports:
       - "10022:22"
+
+#    command: /sbin/init
+#    command: /usr/bin/zsh
+#    command: /usr/bin/bash
+    command: /usr/sbin/sshd -D
 
 networks:
   sshd1_net:

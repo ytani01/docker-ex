@@ -19,10 +19,8 @@ docker compose down --rmi local --volumes
 ```
 ssh ssh://ubuntu@localhost:10022/
 
-cd /app/nodeapp1
-
+cd /vol/nodeapp1
 npm install nodemon --save-dev
-
 npm run start-mon
 ```
 

@@ -1,6 +1,6 @@
 # docker examples
 
-## ubuntu-1
+## ubuntu1
 
 ### Dockerfile
 ```
@@ -18,9 +18,13 @@ docker images
 docker run -itd --rm -h myubuntu1 --name my-ubuntu-1 my-ubuntu:1
 docker ps
 
-docker attatch my-ubuntu-1
+docker attach my-ubuntu-1
 
-Ctrl-P, Ctrl-Q
+# su - username
+
+Ctrl-D # exit username
+
+Ctrl-P, Ctrl-Q # dettach
 
 # save changes to new image
 docker commit my-ubuntu-1 my-ubuntu:2
@@ -35,7 +39,9 @@ docker ps -a
 ```
 docker compose up -d
 
-docker compose attach ubuntu
+docker compose attach ubuntu1_svc
+
+Ctrl-P Ctrl-Q
 
 docker compose down
 

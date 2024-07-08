@@ -24,7 +24,7 @@ services:
     command: sudo /usr/sbin/sshd -D
 
     volumes:
-      - ./_vol:/vol
+      - ./vol:/vol
 
 #    network_mode: host
     networks:

@@ -2,13 +2,13 @@
 
 services:
 
-  ubuntu:
+  ubuntu1_svc:
     build:
       context: .
       dockerfile: Dockerfile
-    image: ubuntu1
+    image: ubuntu1_img
 
-    container_name: ubuntu1
+    container_name: ubuntu1_cont
     restart: unless-stopped
 
     hostname: ubuntu1
@@ -16,9 +16,17 @@ services:
     stdin_open: true
     tty: true
 
+    volumes:
+      - ./_vol:/vol
+
+    networks:
+      - ubuntu1_net
+
 #    command: /sbin/init
 #    command: /usr/bin/zsh
     command: /usr/bin/bash
 
-    volumes:
-      - ./_vol:/vol
+networks:
+  ubuntu1_net:
+    driver: bridge
+    enable_ipv6: false
