@@ -1,5 +1,10 @@
 FROM ubuntu:latest
 
+## user, uid, group, gid
+#ARG USER="ubuntu"
+#ARG UID="1000"
+#ARG GROUP="ubuntu"
+#ARG GID="1000"
 ARG USER="ytani"
 ARG UID="649"
 ARG GROUP="yt"
@@ -11,7 +16,7 @@ RUN apt install -y apt-utils net-tools sudo iputils-ping curl
 
 ## user passwd
 COPY createuser.sh /tmp/
-RUN echo ${USER}:${UID} && echo ${GROUP}:${GID} && sleep 10
+RUN echo USER=${USER}:${UID}, GROUP=${GROUP}:${GID}
 RUN sh /tmp/createuser.sh ${USER} ${UID} ${GROUP} ${GID}
 RUN echo 'root:root' | chpasswd
 
@@ -26,9 +31,10 @@ RUN apt install -y openssh-client openssh-server
 RUN mkdir /var/run/sshd
 
 ## nodejs
-RUN curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+#RUN curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+RUN curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
 RUN apt install -y nodejs
-RUN npm cache clean --force
+#RUN npm cache clean --force
 RUN npm install -g n
 RUN apt purge -y nodejs npm
 RUN apt autoremove -y
@@ -38,8 +44,5 @@ RUN npm update -g npm
 
 ## tools
 #RUN apt install -y git
-
-#RUN sudo /usr/sbin/sshd
-
 #CMD ["/bin/bash"]
 #CMD ["/usr/sbin/sshd", "-D"]

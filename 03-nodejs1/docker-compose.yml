@@ -24,9 +24,17 @@ services:
     command: sudo /usr/sbin/sshd -D
 
     volumes:
-      - ./_app:/app
+      - ./_vol:/vol
 
 #    network_mode: host
+    networks:
+      - nodejs1_net
+
     ports:
       - "10022:22"
       - "13000:3000"
+
+networks:
+  nodejs1_net:
+    driver: bridge
+    enable_ipv6: false

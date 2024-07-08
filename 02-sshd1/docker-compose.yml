@@ -2,19 +2,19 @@
 
 services:
 
-  sshd:
+  sshd1:
     build:
       context: .
       dockerfile: Dockerfile
-    image: sshd1
+    image: sshd1_img
 
-    container_name: sshd1
+    container_name: sshd1_cont
     restart: unless-stopped
 
-    hostname: sshd1
+    hostname: sshd1host
 
-    stdin_open: true
-    tty: true
+#    stdin_open: true
+#    tty: true
 
 #    command: /sbin/init
 #    command: /usr/bin/zsh
@@ -24,5 +24,12 @@ services:
     volumes:
       - ./_vol:/vol
 
+    networks:
+      - sshd1_net
     ports:
       - "10022:22"
+
+networks:
+  sshd1_net:
+    driver: bridge
+    enable_ipv6: false

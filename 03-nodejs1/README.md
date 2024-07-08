@@ -12,19 +12,14 @@ ssh ssh://ubuntu@localhost:10022/
 docker compose down
 
 # all clean
-docker compose down --rmi all --volumes
+docker compose down --rmi local --volumes
 ```
 
 ### nodeapp1
 ```
 ssh ssh://ubuntu@localhost:10022/
-:
-cd ~
-cp -r /work/nodeapp1 .
 
-cd ~/nodeapp1
-
-sudo npm update -g npm
+cd /app/nodeapp1
 
 npm install nodemon --save-dev
 
