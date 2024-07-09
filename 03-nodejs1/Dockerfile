@@ -31,6 +31,9 @@ RUN apt install -y openssh-client openssh-server
 RUN mkdir /var/run/sshd
 
 ## nodejs
+##
+## TODO: volta
+##
 #RUN curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 RUN curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
 RUN apt install -y nodejs
