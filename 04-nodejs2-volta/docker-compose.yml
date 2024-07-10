@@ -2,16 +2,16 @@
 
 services:
 
-  ubuntu1_svc:
+  nodejs2_svc:
     build:
       context: .
       dockerfile: Dockerfile
-    image: ubuntu1_img
+    image: nodejs2_img
 
-    container_name: ubuntu1_cont
+    container_name: nodejs2_cont
     restart: unless-stopped
 
-    hostname: ubuntu1host
+    hostname: nodejs2host
 
     stdin_open: true
     tty: true
@@ -20,7 +20,10 @@ services:
       - ./_vol:/vol
 
     networks:
-      - ubuntu1_net
+      - nodejs2_net
+
+    ports:
+      - "13000:3000"
 
     user: ytani
 
@@ -29,6 +32,6 @@ services:
     command: /usr/bin/bash
 
 networks:
-  ubuntu1_net:
+  nodejs2_net:
     driver: bridge
     enable_ipv6: false

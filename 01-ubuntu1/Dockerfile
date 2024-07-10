@@ -25,3 +25,6 @@ ENV TZ=Asia/Tokyo
 RUN apt install -y tzdata
 RUN echo $TZ > /etc/timezone
 RUN ln -sf /usr/share/zoneinfo/Aisa/Tokyo /etc/localtime
+
+USER $USER
+RUN cd && touch a
