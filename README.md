@@ -14,4 +14,4 @@ sudo usermod -aG docker ユーザー名
 - [01-ubuntu1](01-ubuntu1/)
 - [02-sshd1](02-sshd1/)
 - [03-nodejs1](03-nodejs1/)
-- [04-nodejs2-volta](04-nodejs2-volta/)
+- [04-volta1](04-volta1/)

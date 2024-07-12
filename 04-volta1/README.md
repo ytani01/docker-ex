@@ -1,12 +1,13 @@
 # docker examples
 
-## nodejs2-volta
+## volta1
 
 ### docker compose
 ```
 docker compose up -d
 
-docker compose attach nodejs2_svc
+docker compose attach volta1_svc
+pnpm -v
 
 Ctrl-P Ctrl-Q
 

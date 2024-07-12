@@ -33,5 +33,5 @@ RUN curl https://get.volta.sh | /usr/bin/bash
 
 ## node
 RUN $HOME/.volta/bin/volta install node
-#RUN $HOME/.volta/bin/volta install npm
-RUN $HOME/.volta/bin/volta install pnpm
+RUN $HOME/.volta/bin/volta install corepack
+RUN $HOME/.volta/bin/corepack enable pnpm

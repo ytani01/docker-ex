@@ -2,16 +2,16 @@
 
 services:
 
-  nodejs2_svc:
+  volta1_svc:
     build:
       context: .
       dockerfile: Dockerfile
-    image: nodejs2_img
+    image: volta1_img
 
-    container_name: nodejs2_cont
+    container_name: volta1_cont
     restart: unless-stopped
 
-    hostname: nodejs2host
+    hostname: volta1host
 
     stdin_open: true
     tty: true
@@ -20,7 +20,7 @@ services:
       - ./_vol:/vol
 
     networks:
-      - nodejs2_net
+      - volta1_net
 
     ports:
       - "13000:3000"
@@ -32,6 +32,6 @@ services:
     command: /usr/bin/bash
 
 networks:
-  nodejs2_net:
+  volta1_net:
     driver: bridge
     enable_ipv6: false
