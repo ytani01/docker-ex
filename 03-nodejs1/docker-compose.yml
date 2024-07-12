@@ -13,26 +13,25 @@ services:
 
     hostname: nodejs1host
 
-#    stdin_open: true
-#    tty: true
-
-#    user: "ubuntu:ubuntu"
-
-#    command: /sbin/init
-#    command: /usr/bin/zsh
-#    command: /usr/bin/bash
-    command: sudo /usr/sbin/sshd -D
+    stdin_open: true
+    tty: true
 
     volumes:
       - ./vol:/vol
       
-#    network_mode: host
     networks:
       - nodejs1_net
 
     ports:
-      - "10022:22"
+      #- "10022:22"
       - "13000:3000"
+
+    user: ytani
+    command: /usr/bin/bash
+
+    #command: /sbin/init
+    #command: /usr/bin/zsh
+    #command: sudo /usr/sbin/sshd -D
 
 networks:
   nodejs1_net:
