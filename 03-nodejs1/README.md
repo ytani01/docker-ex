@@ -6,8 +6,8 @@
 ```
 docker compose up -d
 
-ssh -p 10022 ubuntu@localhost
-ssh ssh://ubuntu@localhost:10022/
+docker compose attach nodejs1_svc
+pnpm -v
 
 docker compose down
 
@@ -17,7 +17,7 @@ docker compose down --rmi local --volumes
 
 ### nodeapp1
 ```
-ssh ssh://ubuntu@localhost:10022/
+docker compose attach nodejs1_svc
 
 cd /vol/nodeapp1
 npm install nodemon --save-dev

@@ -11,7 +11,7 @@ ARG GROUP="yt"
 ARG GID="121"
 
 ## base apt
-RUN apt update && apt install -y apt-utils net-tools sudo iputils-ping curl tzdata
+RUN apt update && apt install -y sudo curl tzdata
 
 ## set timezone
 ENV TZ=Asia/Tokyo
@@ -35,3 +35,4 @@ RUN curl https://get.volta.sh | /usr/bin/bash
 RUN $HOME/.volta/bin/volta install node
 RUN $HOME/.volta/bin/volta install corepack
 RUN $HOME/.volta/bin/corepack enable pnpm
+RUN yes | $HOME/.volta/bin/pnpm -v

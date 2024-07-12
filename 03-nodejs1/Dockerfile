@@ -12,11 +12,10 @@ ARG GID="121"
 
 ## base apt
 RUN apt update && apt upgrade -y
-RUN apt install -y apt-utils net-tools sudo iputils-ping curl
+RUN apt install -y sudo curl tzdata
 
 ## set timezone
 ENV TZ=Asia/Tokyo
-RUN apt install -y tzdata
 RUN echo $TZ > /etc/timezone
 RUN ln -sf /usr/share/zoneinfo/Aisa/Tokyo /etc/localtime
 
