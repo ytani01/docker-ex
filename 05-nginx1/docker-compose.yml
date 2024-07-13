@@ -1,0 +1,11 @@
+services:
+  nginx80:
+    image: nginx:latest
+    ports:
+      - 80:80
+    volumes:
+      - ./conf:/etc/nginx/conf.d
+      - ./logs:/var/log/nginx
+      - ./html:/usr/share/nginx/html
+    environment:
+      - TZ=Asia/Tokyo
