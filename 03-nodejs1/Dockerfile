@@ -31,9 +31,6 @@ RUN echo 'root:root' | chpasswd
 #RUN mkdir /var/run/sshd
 
 ## nodejs
-##
-## TODO: volta
-##
 RUN curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
 RUN apt install -y nodejs
 RUN npm install -g n

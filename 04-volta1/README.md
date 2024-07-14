@@ -16,3 +16,11 @@ docker compose down
 # all clean
 docker compose down --rmi all --volumes
 ```
+
+### next.js app
+```
+pnpx create-next-app@latest
+
+pnpm run dev
+
+```
