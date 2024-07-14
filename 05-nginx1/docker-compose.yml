@@ -4,8 +4,8 @@ services:
     ports:
       - 80:80
     volumes:
-      - ./conf:/etc/nginx/conf.d
-      - ./logs:/var/log/nginx
-      - ./html:/usr/share/nginx/html
+      - ./data/conf:/etc/nginx/conf.d
+      - ./data/logs:/var/log/nginx
+      - ./data/html:/usr/share/nginx/html
     environment:
       - TZ=Asia/Tokyo
