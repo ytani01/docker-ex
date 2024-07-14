@@ -9,7 +9,7 @@
 ポート番号に注意
 
 - [docker-compose.yml](docker-compose.yml)
-- [data/conf/default.conf](conf/default.conf)
+- [data/conf/default.conf](data/conf/default.conf)
 
 ### docker compose
 ```
