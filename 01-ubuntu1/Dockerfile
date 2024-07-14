@@ -12,19 +12,19 @@ ARG GID="121"
 
 ## base apt
 RUN apt update && apt upgrade -y
-RUN apt install -y apt-utils net-tools sudo iputils-ping curl
-
-## user passwd
-COPY createuser.sh /tmp/
-RUN echo USER=${USER}:${UID}, GROUP=${GROUP}:${GID}
-RUN sh /tmp/createuser.sh ${USER} ${UID} ${GROUP} ${GID}
-RUN echo 'root:root' | chpasswd
+RUN apt install -y apt-utils net-tools sudo iputils-ping curl tzdata
 
 ## set timezone
 ENV TZ=Asia/Tokyo
-RUN apt install -y tzdata
 RUN echo $TZ > /etc/timezone
 RUN ln -sf /usr/share/zoneinfo/Aisa/Tokyo /etc/localtime
+
+## user passwd
+RUN groupadd -g $GID $GROUP -f && useradd -m -s /bin/bash -u $UID -g $GID $USER
+RUN echo "${USER}:${USER}" | chpasswd
+RUN echo "${USER} ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/010-${USER}
+
+RUN echo 'root:root' | chpasswd
 
 USER $USER
 RUN cd && touch a

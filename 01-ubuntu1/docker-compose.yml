@@ -23,9 +23,7 @@ services:
       - ubuntu1_net
 
     user: ytani
-
-#    command: /sbin/init
-#    command: /usr/bin/zsh
+    working_dir: $HOME
     command: /usr/bin/bash
 
 networks:
