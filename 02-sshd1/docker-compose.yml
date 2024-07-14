@@ -25,7 +25,6 @@ services:
       - "10022:22"
 
 #    command: /sbin/init
-#    command: /usr/bin/zsh
 #    command: /usr/bin/bash
     command: /usr/sbin/sshd -D
 

@@ -26,10 +26,6 @@ RUN echo "${USER} ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/010-${USER}
 
 RUN echo 'root:root' | chpasswd
 
-## sshd
-#RUN apt install -y openssh-client openssh-server
-#RUN mkdir /var/run/sshd
-
 ## nodejs
 RUN curl -sL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
 RUN apt install -y nodejs
